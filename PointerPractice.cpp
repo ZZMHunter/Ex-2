@@ -3,7 +3,7 @@
 TaskAAnswers taskA_pointerExpressions(int arr[]) {
 	int* p = arr;
 
-	return {
+	return TaskAAnswers{
 		*arr,
 		arr[0],
 		*(arr + 1),
@@ -20,7 +20,7 @@ TaskAAnswers taskA_pointerExpressions(int arr[]) {
 }
 
 int* allocate(std::size_t size) {
-    return new int[size]();
+    return new int[size]{};
 }
 
 int* lastMinimum(int* arr, std::size_t size) {
@@ -54,9 +54,9 @@ void reverse(int* arr, std::size_t size) {
 }
 
 void swapValues(int* a, int* b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 void swapPointers(int** a, int** b){
