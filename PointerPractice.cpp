@@ -1,4 +1,5 @@
 #include "PointerPractice.hpp"
+#include <algorithm>
 
 TaskAAnswers taskA_pointerExpressions(int arr[]) {
 	int* p = arr;
@@ -20,7 +21,7 @@ TaskAAnswers taskA_pointerExpressions(int arr[]) {
 }
 
 int* allocate(std::size_t size) {
-    return new int[size]{};
+    return new int[size]{0};
 }
 
 int* lastMinimum(int* arr, std::size_t size) {
@@ -45,11 +46,7 @@ void reverse(int* arr, std::size_t size) {
     int* right = arr + size - 1;
 
     while (left < right) {
-        int temp = *left;
-        *left = *right;
-        *right = temp;
-        ++left;
-        --right;
+        swapValues(left,right);
     }
 }
 
