@@ -1,5 +1,4 @@
 #include "PointerPractice.hpp"
-#include <algorithm>
 
 TaskAAnswers taskA_pointerExpressions(int arr[]) {
 	int* p = arr;
@@ -46,7 +45,11 @@ void reverse(int* arr, std::size_t size) {
     int* right = arr + size - 1;
 
     while (left < right) {
-        swapValues(left,right);
+        int temp = *left;
+        *left = *right;
+        *right = temp;
+        ++left;
+        --right;
     }
 }
 
