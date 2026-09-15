@@ -38,6 +38,9 @@ int* lastMinimum(int* arr, std::size_t size) {
 }
 
 void reverse(int* arr, std::size_t size) {
+    if (size < 2) {
+        return;
+    }
     int* left = arr;
     int* right = arr + size - 1;
 
