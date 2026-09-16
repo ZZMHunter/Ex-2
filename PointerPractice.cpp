@@ -66,6 +66,10 @@ void swapPointers(int** a, int** b){
 }
 
 bool isPalindrome(const int* arr, std::size_t size){
+    if (size < 2) {
+        return true;
+    }
+
     const int* left = arr;
     const int* right = arr + size - 1;
 
